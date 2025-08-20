@@ -3,7 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { X } from "lucide-react"
 import { Outlet } from "react-router"
 
-export const ChatLayout = () => {
+export default function ChatLayout() {
   return (
     <div className="flex h-screen bg-background">
       {/* Sidebar */}
