@@ -13,3 +13,11 @@
 - Palabras reservadas
 - Async Await Fetch
 - Comentar funciones, clases con JsDoc
+
+## React 19
+
+## React Router Dom
+
+## Git Github
+
+## TypeScript
