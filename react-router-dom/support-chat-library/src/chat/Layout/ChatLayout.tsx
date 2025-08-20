@@ -1,9 +1,9 @@
-import type React from "react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { X } from "lucide-react"
+import { Outlet } from "react-router"
 
-export const ChatLayout = ({ children }: { children: React.ReactNode }) => {
+export const ChatLayout = () => {
   return (
     <div className="flex h-screen bg-background">
       {/* Sidebar */}
@@ -85,7 +85,7 @@ export const ChatLayout = ({ children }: { children: React.ReactNode }) => {
               </Button>
             </div>
           </header>
-          {children}
+          <Outlet />
         </div>
 
         {/* Right Panel - Contact Details */}
