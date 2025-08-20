@@ -1,10 +1,7 @@
-import { ChatLayout } from "./chat/Layout/ChatLayout"
-import { ChatPage } from "./chat/pages/ChatPage"
+import { AppRouter } from "./router/AppRouter"
 
 export const App = () => {
   return (
-    <ChatLayout>
-      <ChatPage />
-    </ChatLayout>
+    <AppRouter />
   )
 }

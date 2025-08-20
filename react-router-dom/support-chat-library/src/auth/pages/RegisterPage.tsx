@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label"
 import Image from "@/assets/img/placeholder.svg"
 import { Link } from "react-router"
 
-export const LoginPage = ({ className, ...props }: React.ComponentProps<"div">) => {
+export const RegisterPage = ({ className, ...props }: React.ComponentProps<"div">) => {
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0">
@@ -16,6 +16,10 @@ export const LoginPage = ({ className, ...props }: React.ComponentProps<"div">) 
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-bold">Welcome back</h1>
                 <p className="text-balance text-muted-foreground">Login to your Acme Inc account</p>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="username">Full Name</Label>
+                <Input id="username" type="username" placeholder="m@example.com" required />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
@@ -66,9 +70,9 @@ export const LoginPage = ({ className, ...props }: React.ComponentProps<"div">) 
                 </Button>
               </div>
               <div className="text-center text-sm">
-                Don&apos;t have an account?{" "}
-                <Link to={"/auth/register"} className="underline underline-offset-4">
-                  Sign up
+                Do you have an account? {" "}
+                <Link to={"/auth/login"} className="underline underline-offset-4">
+                  Log in
                 </Link>
               </div>
             </div>
