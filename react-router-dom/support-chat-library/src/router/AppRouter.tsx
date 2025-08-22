@@ -1,17 +1,25 @@
 import { lazy, Suspense } from "react"
 import { BrowserRouter, Route, Routes, Navigate } from "react-router"
 
+import { sleep } from "@/lib/sleep"
+
 import { AuthLayout } from "@/auth/layout/AuthLayout"
 import { LoginPage } from "@/auth/pages/LoginPage"
 import { RegisterPage } from "@/auth/pages/RegisterPage"
-import { ChatPage } from "@/chat/pages/ChatPage"
-
-import { sleep } from "@/lib/sleep"
 
 const ChatLayout = lazy(async () => {
   await sleep(1500);
   return import("@/chat/Layout/ChatLayout");
 });
+
+const ChatPage = lazy(async () => {
+  await sleep(3000);
+  return import("@/chat/pages/ChatPage");
+})
+
+const NoChatSelected = lazy(async () => {
+  return import("@/chat/pages/NoChatSelected");
+})
 
 export const AppRouter = () => {
   return (
@@ -32,9 +40,10 @@ export const AppRouter = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <ChatLayout />
           </Suspense>
-        }>
-          <Route index element={< ChatPage /> } />
-          <Route path="*" element={ <Navigate to={"/chat"} />} />
+          }>
+
+          <Route index element={<ChatPage />} />
+          <Route path="/chat/:ClientID" element={<NoChatSelected />} />
         </Route>
         
         {/* Redirection page to auth for user login */}

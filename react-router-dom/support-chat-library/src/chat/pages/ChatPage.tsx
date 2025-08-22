@@ -10,7 +10,7 @@ interface Message {
   timestamp: string
 }
 
-export const ChatPage = () => {
+export default function ChatPage () {
   const [input, setInput] = useState("")
   const [messages] = useState<Message[]>([
     {
