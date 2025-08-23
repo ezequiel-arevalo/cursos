@@ -13,7 +13,7 @@ const ChatLayout = lazy(async () => {
 });
 
 const ChatPage = lazy(async () => {
-  await sleep(3000);
+  await sleep(1500);
   return import("@/chat/pages/ChatPage");
 })
 
@@ -42,8 +42,8 @@ export const AppRouter = () => {
           </Suspense>
           }>
 
-          <Route index element={<ChatPage />} />
-          <Route path="/chat/:ClientID" element={<NoChatSelected />} />
+          <Route index element={<NoChatSelected />} />
+          <Route path="/chat/:clientId" element={<ChatPage />} />
         </Route>
         
         {/* Redirection page to auth for user login */}
