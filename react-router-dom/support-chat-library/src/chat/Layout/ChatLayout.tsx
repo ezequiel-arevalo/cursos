@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Outlet, useParams } from "react-router"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ContactList } from "../components/ContactList"
-import { ContactInfo } from "../components/ContactInfo"
 import { NoContactSelected } from "../components/NoContactSelected"
 import { ContactInfoSkeleton } from "../components/ContactInfoSkeleton"
 
